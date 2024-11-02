@@ -80,8 +80,7 @@ Một workflow từ cơ bản đến phức tạp bao gồm các thành phần s
 #### Huấn Luyện Từ Dataset
 ```bash
 python Lora_ABC --dataset_path /path/to/dataset --output_dir /path/to/output --learning_rate 1e-4 --batch_size 4 --num_steps 10000 --rank 8
----
----
+```bash
 ## Tạo Ảnh Từ Ảnh (Image to Image) Với Chế Độ Pose
 Chế độ "Image to Image" cho phép bạn tạo ra một bức ảnh mới dựa trên dáng của một ảnh mục tiêu đầu vào. Dưới đây là hướng dẫn chi tiết về cách thiết lập workflow để thực hiện điều này.
 
