@@ -80,9 +80,9 @@ Một workflow từ cơ bản đến phức tạp bao gồm các thành phần s
 #### Huấn Luyện Từ Dataset
 ```bash
 python Lora_ABC --dataset_path /path/to/dataset --output_dir /path/to/output --learning_rate 1e-4 --batch_size 4 --num_steps 10000 --rank 8
-```bash
+```
 ## Tạo Ảnh Từ Ảnh (Image to Image) Với Chế Độ Pose
-Chế độ "Image to Image" cho phép bạn tạo ra một bức ảnh mới dựa trên dáng của một ảnh mục tiêu đầu vào. Dưới đây là hướng dẫn chi tiết về cách thiết lập workflow để thực hiện điều này.
+Chế độ "Image to Image" cho phép tạo ra một bức ảnh mới dựa trên dáng của một ảnh mục tiêu đầu vào. Dưới đây là hướng dẫn chi tiết về cách thiết lập workflow để thực hiện điều này.
 
 ### Các Node Cần Thiết
 1. **Các Thành Phần Cơ Bản của Một Workflow**: Bao gồm các node cần thiết như Load Model, Clip Text Encode, VAE Decode, và KSampler.
@@ -92,7 +92,7 @@ Chế độ "Image to Image" cho phép bạn tạo ra một bức ảnh mới d�
    - **Node VAE Encode**: Mã hóa ảnh đầu vào để chuyển đổi thành vector latents.
    - **Node Pose**: Lấy dáng của mục tiêu trong ảnh.
 
-3. **Node Load ControlNet Model**: Tải mô hình ControlNet mà bạn muốn sử dụng để điều chỉnh quá trình tạo ảnh.
+3. **Node Load ControlNet Model**: Tải mô hình ControlNet mà muốn sử dụng để điều chỉnh quá trình tạo ảnh.
 
 4. **Node Apply ControlNet**: Được chèn vào giữa flow của Clip Text Prompt và KSampler để điều chỉnh ảnh dựa trên dáng mục tiêu.
 
@@ -114,8 +114,7 @@ Chế độ "Image to Image" cho phép bạn tạo ra một bức ảnh mới d�
    - Điều chỉnh cường độ noise giảm trong quá trình sampling. Giá trị denoise quá lớn sẽ dẫn đến sáng tạo nhưng có thể sai lệch, trong khi giá trị quá nhỏ sẽ tạo ra ảnh giống với ảnh gốc. Giá trị khoảng 0.3 thường cho kết quả gần gũi với người thật hơn.
 
 ### Thay Thế Nếu Không Sử Dụng Được Node DWPose
-Nếu bạn không thể sử dụng node DWPose (Node Pose), có thể thay thế bằng cách sử dụng OpenPose hoặc các phương pháp khác có sẵn trong ComfyUI để lấy dáng từ ảnh.
+Nếu không thể sử dụng node DWPose (Node Pose), có thể thay thế bằng cách sử dụng OpenPose hoặc các phương pháp khác có sẵn trong ComfyUI để lấy dáng từ ảnh.
 
 ---
 
-Hy vọng rằng hướng dẫn này sẽ giúp bạn thiết lập thành công quy trình tạo ảnh từ ảnh trong ComfyUI!
